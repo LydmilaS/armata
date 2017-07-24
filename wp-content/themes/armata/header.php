@@ -17,8 +17,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i&amp;subset=cyrillic" rel="stylesheet">
+    <script src="https://use.fontawesome.com/49cb636043.js"></script>
+    <script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
 
-	<?php wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -51,6 +53,13 @@
                         wp_nav_menu( array(
                             'theme_location' => 'menu-1',
                             'menu_id'        => 'primary-menu',
+                        ) );
+                        ?>
+
+                        <?php
+                        wp_nav_menu( array(
+                            'theme_location' => 'menu-2',
+                            'menu_id'        => 'language',
                         ) );
                         ?>
                     </nav><!-- #site-navigation -->

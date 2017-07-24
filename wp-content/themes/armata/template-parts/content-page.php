@@ -11,10 +11,11 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
+		<?php the_title( '<h1 class="entry-title entry-title-page">', '</h1>' ); ?>
 	</header><!-- .entry-header -->
+    <div class="container">
 
-	<div class="entry-content">
+    <div class="entry-content">
 		<?php
 			the_content();
 
@@ -47,4 +48,5 @@
 			?>
 		</footer><!-- .entry-footer -->
 	<?php endif; ?>
+    </div>
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -47,6 +47,10 @@ function armata_setup() {
 		'menu-1' => esc_html__( 'Primary', 'armata' ),
 	) );
 
+    register_nav_menus( array(
+        'menu-2' => esc_html__( 'Language', 'armata' ),
+    ) );
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -120,6 +124,8 @@ function armata_scripts() {
 	wp_enqueue_style( 'armata-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'armata-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+
+    wp_enqueue_script( 'armata-main', get_template_directory_uri() . '/js/main.js', array(), '20151215', true );
 
 	wp_enqueue_script( 'armata-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 

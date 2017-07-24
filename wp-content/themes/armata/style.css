@@ -726,7 +726,20 @@ body {
 	font-family: 'Open Sans', sans-serif;;
 }
 
-/* header */
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ul li {
+	list-style-type: none;
+}
+
+.entry-title {
+	margin: 0;
+}
+
+/************************************************ header *******************************************************/
 
 header#masthead {
 	padding: 30px 0;
@@ -735,6 +748,7 @@ header#masthead {
 .logotype-area a:hover {
 	text-decoration: none;
 }
+
 .logotype-area span {
 	display: block;
 	text-transform: uppercase;
@@ -764,7 +778,6 @@ header#masthead {
 }
 
 .main-navigation li {
-	list-style-type: none;
 	display: inline-block;
 	padding-left: 20px;
 	line-height: 50px;
@@ -775,15 +788,25 @@ header#masthead {
 	transition: .2s;
 }
 
+.main-navigation li a.active {
+	color: #1abc9c;
+}
+
 .main-navigation li a:hover {
     color: #1abc9c;
 	text-decoration: none;
 }
 
-#main {
-	width: 80%;
-	float: left;
+.menu-language-container,
+.menu-primary-container {
+	display: inline-block;
 }
+
+.menu-language-container {
+	margin-left: 70px;
+}
+
+/*********************************************** main content ****************************/
 
 article h2 a {
 	color: #696969;
@@ -796,10 +819,66 @@ article h2 a:hover {
 	text-decoration: none;
 }
 
-#secondary {
-	width: 20%;
-	float: left;
+.more-link,
+.btn {
+	background: #1abc9c;
+	border: 1px solid #1abc9c;
+	font-weight: 600;
+	padding: 10px 20px;
+	color: white;
+	display: inline-block;
+	margin-top: 15px;
+	transition: .2s;
 }
+
+.more-link:hover,
+.btn:hover {
+	background: transparent;
+	color: black;
+	text-decoration: none;
+}
+
+.title-section,
+.title-news {
+	font-size: 36px;
+	text-align: left;
+	color: #696969;
+	position: relative;
+	display: inline-block;
+	margin: 0 0 40px;
+}
+
+.title-section:after,
+.title-news:after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 2px;
+	background: #1abc9c;
+	position: absolute;
+	left: 0;
+}
+
+.list-partners {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 40px;
+}
+
+.list-partners li {
+	display: inline-block;
+}
+
+.list-partners img {
+	width: 120px;
+}
+
+.list-partners img.lg-img {
+	width: 200px;
+}
+
+/*********************************************** footer ****************************/
 
 footer#colophon {
 	background: #2a3b4d;
@@ -808,3 +887,132 @@ footer#colophon {
 	text-align: center;
 }
 
+
+/*********************************************** page about ****************************/
+.page-about {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+h2.title-about-page {
+	font-size: 36px;
+	padding: 20px 0;
+	text-align: center;
+	background: #1abc9c;
+	color: white;
+	margin: 0 0 70px;
+}
+
+.workers .thumbnail-post,
+.lectors .thumbnail-post {
+	width: 180px;
+	height: 180px;
+	overflow: hidden;
+	margin: auto;
+}
+
+.workers,
+.lectors {
+	box-sizing: border-box;
+	padding: 20px;
+	text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+	.workers,
+	.lectors {
+		width: 50%;
+	}
+}
+
+.profession {
+	font-weight: 600;
+}
+
+
+/*********************************************** page contact ****************************/
+
+.contacts li {
+	margin-bottom: 25px;
+}
+
+.contacts .fa {
+	padding-right: 10px;
+	font-size: 20px;
+}
+
+.fa-map-marker:before {
+	color: #f75c54;
+}
+
+.fa-phone:before {
+	color: #1abc9c;
+}
+
+.fa-envelope {
+	color: #1d9eff;
+}
+
+.page-header h1 {
+	margin: 0;
+	font-size: inherit;
+}
+
+.entry-title-page,
+.page-header {
+	font-size: 36px;
+	position: relative;
+	display: block;
+	color: white;
+	padding: 20px 0;
+	background: #1abc9c;
+	text-align: center;
+	margin: 0 0 40px;
+}
+
+/* widget */
+.widget {
+	padding-bottom: 30px;
+	border-bottom: 1px solid grey;
+}
+
+/****************************** home **********************************/
+.activities li {
+	list-style-type: none;
+	padding-left: 30px;
+	margin-bottom: 20px;
+	position: relative;
+}
+
+.activities .fa {
+	position: absolute;
+	left: 0;
+	top: 3px;
+	color: green;
+	font-size: 16px;
+}
+
+.video-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.video-block {
+	display: none;
+	margin-bottom: 30px;
+}
+
+@media only screen and (min-width: 768px) {
+	.video-block {
+		width: 47%;
+	}
+}
+
+span.title-video {
+	font-size: 28px;
+	margin-bottom: 5px;
+	display: block;
+}
