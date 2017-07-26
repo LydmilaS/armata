@@ -14,13 +14,11 @@
 
 get_header(); ?>
 <div >
-<?php
-echo do_shortcode("[metaslider id=52]");
-?>
+
 </div>
     <div id="primary" class="content-area">
-        <div class="container">
-            <main id="main" class="site-main">
+
+            <main id="main" class="home-page site-main">
                 <?php
                 if ( have_posts() ) :
 
@@ -43,7 +41,6 @@ echo do_shortcode("[metaslider id=52]");
                 endif; ?>
 
             </main><!-- #main -->
-        </div>
     </div><!-- #primary -->
 
 <?php

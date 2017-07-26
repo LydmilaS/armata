@@ -51,6 +51,10 @@ function armata_setup() {
         'menu-2' => esc_html__( 'Language', 'armata' ),
     ) );
 
+    register_nav_menus( array(
+        'menu-3' => esc_html__( 'Social', 'armata' ),
+    ) );
+
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.

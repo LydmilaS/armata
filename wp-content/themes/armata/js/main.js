@@ -1,3 +1,7 @@
+$('.menu-toggle').on('click', function () {
+    $('.navigation').toggleClass('open-menu');
+});
+
 // for geting language from url and add class active them
 function getParameterByName(name, url) {
     if (!url) url = window.location.href;
@@ -45,33 +49,3 @@ if ($('#primary').data('is_blog')) {
     $('#menu-item-20 > a').addClass('active');
 }
 // end;
-//load more button
-
-$(function () {
-    $(".video-block").slice(0, 4).show();
-    $("#loadMore").on('click', function (e) {
-        e.preventDefault();
-        $(".video-block:hidden").slice(0, 4).slideDown();
-        if ($(".video-block:hidden").length == 0) {
-            $("#load").fadeOut('slow');
-        }
-        $('html,body').animate({
-            scrollTop: $(this).offset().top
-        }, 1500);
-    });
-});
-
-$('span.top').click(function () {
-    $('body,html').animate({
-        scrollTop: 0
-    }, 600);
-    return false;
-});
-
-$(window).scroll(function () {
-    if ($(this).scrollTop() > 50) {
-        $('.totop span').fadeIn();
-    } else {
-        $('.totop span').fadeOut();
-    }
-});

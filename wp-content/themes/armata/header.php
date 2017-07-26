@@ -16,7 +16,8 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i&amp;subset=cyrillic" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,500,600,600i,700,700i&amp;subset=cyrillic" rel="stylesheet">
     <script src="https://use.fontawesome.com/49cb636043.js"></script>
     <script   src="https://code.jquery.com/jquery-3.1.0.js"   integrity="sha256-slogkvB1K3VOkzAI8QITxV3VzpOnkeNVsKvtkYLMjfk="   crossorigin="anonymous"></script>
 
@@ -30,7 +31,7 @@
 	<header id="masthead" class="site-header">
         <div class="container">
             <div class="row">
-                <div class="logotype-area col-xs-6 col-sm-4">
+                <div class="logotype-area col-xs-10 col-sm-6 col-md-4">
                     <a href="<?php echo home_url();?>">
                         <?php
                         if (ot_get_option('logotype_image')): ?>
@@ -46,9 +47,9 @@
                         <span class="site-slogan">Chirurgus curat manu armata!</span>
                     </a>
                 </div>
-                <div class="navigation col-xs-6 col-sm-8">
+                <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i class="fa fa-bars" aria-hidden="true"></i></button>
+                <div class="navigation col-xs-12 col-sm-6  col-md-8">
                     <nav id="site-navigation" class="main-navigation">
-                        <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'armata' ); ?></button>
                         <?php
                         wp_nav_menu( array(
                             'theme_location' => 'menu-1',

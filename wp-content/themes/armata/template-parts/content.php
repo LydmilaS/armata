@@ -10,6 +10,10 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <a href="<?php echo esc_url( get_permalink() ) ; ?>" rel="bookmark">
+        <?php the_post_thumbnail( ); ?>
+    </a>
+
 	<header class="entry-header">
 		<?php
 		if ( is_singular() && ! is_front_page() ) :
@@ -19,18 +23,33 @@
 		endif;
 
 		if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php armata_posted_on(); ?><br/>
 
+		<div class="entry-date">
+            <?php if(qtrans_getLanguage() == "ru") : ?>
+                <span class="main-color">Опубликован: </span> <?php echo get_the_date('d/m/Y'); ?>
+            <?php else :?>
+                <span class="main-color">Published: </span> <?php echo get_the_date('d/m/Y'); ?>
+            <?php endif; ?>
 		</div><!-- .entry-meta -->
 		<?php
 		endif; ?>
+        <div class="entry-date">
+            <?php if(qtrans_getLanguage() == "ru") : ?>
+                <span class="main-color">Категории : </span>  <?php armata_entry_footer(); ?>
+            <?php else :?>
+                <span class="main-color">Category: </span>  <?php armata_entry_footer(); ?>
+            <?php endif; ?>
+
+        </div><!-- .entry-meta -->
 	</header><!-- .entry-header -->
 
 	<div class="entry-content">
-        <?php the_post_thumbnail( ); ?>
-        <?php armata_entry_footer(); ?>
-        <?php the_content( '', ''); ?>
+        <?php if(qtrans_getLanguage() == "ru") : ?>
+            <?php the_content( 'Читать далее', ''); ?>
+        <?php else :?>
+            <?php the_content( 'Read more', ''); ?>
+        <?php endif; ?>
+
 
 	</div><!-- .entry-content -->
 

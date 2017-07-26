@@ -16,10 +16,17 @@
 	<footer id="colophon" class="site-footer">
         <div class="container">
             <?php if(qtrans_getLanguage() == "ru") : ?>
-                &copy; 2016 Armata Manus. Все права защищены.
+                <p> &copy; 2016 Armata Manus. Все права защищены. </p>
             <?php else :?>
-                &copy; 2016 Armata Manus. All rights reserved.
+                <p> &copy; 2016 Armata Manus. All rights reserved. </p>
             <?php endif; ?>
+
+            <?php
+            wp_nav_menu( array(
+                'theme_location' => 'menu-3',
+                'menu_id'        => 'social',
+            ) );
+            ?>
         </div>
 	</footer><!-- #colophon -->
 </div><!-- #page -->

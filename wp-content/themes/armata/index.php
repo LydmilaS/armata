@@ -22,7 +22,8 @@ get_header(); ?>
         <?php endif; ?>
         <div class="container">
             <div class="row">
-            <main id="main" class="col-md-9 site-main">
+                <?php get_sidebar(); ?>
+            <main id="main" class="col-md-9 col-md-pull-3 site-main">
                 <?php
                 if ( have_posts() ) :
 
@@ -44,18 +45,29 @@ get_header(); ?>
                          */
                         get_template_part( 'template-parts/content', get_post_format() );
 
-                    endwhile;
+                    endwhile;  ?>
+                    <div class="pagination">
+                        <?php global $wp_query;
 
-                    the_posts_navigation();
+                        $big = 999999999; // need an unlikely integer
 
-                else :
+                        echo paginate_links( array(
+                            'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
+                            'format' => '?paged=%#%',
+                            'current' => max( 1, get_query_var('paged') ),
+                            'total' => $wp_query->max_num_pages
+                        ) ); ?>
+
+                    </div>
+
+                <?php else :
 
                     get_template_part( 'template-parts/content', 'none' );
 
                 endif; ?>
 
             </main><!-- #main -->
-            <?php get_sidebar(); ?>
+
             </div>
         </div>
 	</div><!-- #primary -->

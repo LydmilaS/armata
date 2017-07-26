@@ -24,7 +24,9 @@ get_header(); ?>
                 </header><!-- .page-header -->
 
                     <div class="container">
-                        <main id="main" class="site-main col-md-9">
+                        <div class="row">
+                        <?php get_sidebar(); ?>
+                        <main id="main" class="col-md-9 col-md-pull-3 site-main">
                         <?php
                         /* Start the Loop */
                         while ( have_posts() ) : the_post();
@@ -46,7 +48,7 @@ get_header(); ?>
 
                         endif; ?>
                         </main><!-- #main -->
-                        <?php get_sidebar(); ?>
+                        </div>
                     </div>
 
 
